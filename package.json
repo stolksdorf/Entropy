@@ -2,10 +2,20 @@
   "name": "entropy",
   "version": "1.0.0",
   "description": "A hyper-opinionated music player built on electron",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node_modules/.bin/electron .",
+    "start": "npm run dev",
+    "build": "node scripts/build.js"
   },
   "author": "stolksdorf",
-  "license": "ISC"
+  "license": "MIT",
+  "devDependencies": {
+    "electron-packager": "^8.6.0",
+    "electron-reload": "^1.1.0"
+  },
+  "dependencies": {
+    "electron": "^1.6.2",
+    "lodash": "^4.17.4"
+  }
 }
