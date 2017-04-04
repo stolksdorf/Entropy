@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node_modules/.bin/electron .",
     "start": "npm run dev",
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "test": "nodemon app/lib.gen.js"
   },
   "author": "stolksdorf",
   "license": "MIT",
@@ -16,6 +17,7 @@
   },
   "dependencies": {
     "electron": "^1.6.2",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "node-id3": "0.0.9"
   }
 }

@@ -1,0 +1,23 @@
+{
+	"library" : ["C:/Dropbox/root/Programming/Javascript/entropy/test_lib"],
+
+	"shortcuts" : {
+		"global": {
+			"CommandOrControl+X" : "play",
+			"CommandOrControl+Y" : "pause",
+			"CommandOrControl+Z" : "next"
+		},
+		"local" : {
+			"CommandOrControl+R" : "rescan",
+			"CommandOrControl+L" : "mode:repeat"
+		}
+	},
+
+	"moods" : {
+		"intense" : "#e74c3c",
+		"no_vocals": "#bdc3c7",
+		"calm" : "#1abc9c",
+		"concentration" : "#8e44ad",
+		"upbeat" : "#f1c40f"
+	}
+}

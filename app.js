@@ -16,7 +16,7 @@ const createWindow = ()=>{
 
 
 
-	const ret = Electron.globalShortcut.register('CommandOrControl+X', () => {
+	Electron.globalShortcut.register('CommandOrControl+.', () => {
 		console.log('CommandOrControl+X is pressed')
 	});
 
