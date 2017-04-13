@@ -11,8 +11,9 @@ A highly opinionated electron music player
 - Able to handle streamed music (youtube, soundcloud, etc.)
 - Configs all through JSON
 - 'Up next' playlist
-
-
+- Menu and shortcuts configured from JSON file
+- Use CSS grids for layout, https://github.com/electron/electron/issues/4565
+- remember layout and music selection between sessions
 
 ### streamed music
 
@@ -63,21 +64,32 @@ module.exports = {
 	}
 }
 ```
+- static Playlists: All, Stream, Up next, search
+
 
 
 ### Actions
-- change play mode
+- change play mode: shuffle, single repeat.
 - play/pause
 - next/previous
 - add to up_next
 - rescan library
 - recalculate playlists
-
+- Open playlist from edit
+- open settings for edit
+- init
+- set active playlist
+- create playlsit
+- delete song (?)
+- modify mood
 
 ### extra screens
 - Search
 - Song editor
 - History of events?
+- chromecast
+- playlist view
+-
 
 
 ### settings
@@ -87,15 +99,15 @@ module.exports = {
 	"library" : ["C:/Dropbox/root/Programming/Javascript/entropy/test_lib"],
 
 	"shortcuts" : {
-	"global": {
-		"CommandOrControl+X" : "play",
-		"CommandOrControl+Y" : "pause",
-		"CommandOrControl+Z" : "next"
-	},
-	"local" : {
-		"CommandOrControl+R" : "rescan",
-		"CommandOrControl+L" : "mode:repeat"
-	}
+		"global": {
+			"CommandOrControl+X" : "play",
+			"CommandOrControl+Y" : "pause",
+			"CommandOrControl+Z" : "next"
+		},
+		"local" : {
+			"CommandOrControl+R" : "rescan",
+			"CommandOrControl+L" : "mode:repeat"
+		}
 	},
 
 	"moods" : {
@@ -107,3 +119,14 @@ module.exports = {
 	}
 }
 ```
+
+
+### search
+- basic search using title and artist
+- using colons will add property access, eg. `mood:calm`, `title:fancy`
+
+
+### desings
+
+http://media02.hongkiat.com/music-app-mobile-designs/2-music-app-designs-for-mobile.jpg
+http://media02.hongkiat.com/music-app-mobile-designs/14-music-app-designs-for-mobile.jpg
