@@ -1,23 +1,19 @@
-//https://github.com/electron-userland/electron-packager/blob/master/docs/api.md
+const label = 'build';
+console.time(label);
 
-const packager = require('electron-packager');
+const clean = require('vitreum/steps/clean.js');
+const jsx   = require('vitreum/steps/jsx.js');
+const lib   = require('vitreum/steps/libs.js');
+const less  = require('vitreum/steps/less.js');
+const asset = require('vitreum/steps/assets.js');
 
-const options = {
-	dir: ".",
-	name: "Entropy",
-	overwrite: true,
-	out: "build",
-	tmpdir: false,
-	asar : true,
-	platform: "win32",
-	ignore: ["[.]gitignore", "[.]DS_Store", "[.]idea", "scripts", "Dockerfile", ".*[.]sublime-"]
-}
+const Proj = require('./project.json');
 
-packager(options, function(err, appPaths) {
-	if (err) {
-		console.log('Failed to build ' + options.platform + 'with error: ' + err);
-		process.exit(1);
-	} else {
-		console.log('Package created at ' + appPaths[0]);
-	}
-});
+Promise.resolve()
+	.then(()=>clean())
+	.then(()=>lib(Proj.libs))
+	.then(()=>jsx(Proj.root.name, Proj.root.path, Proj.libs, Proj.common))
+	.then((deps)=>less(Proj.root.name, Proj.common, deps))
+	.then(()=>asset(Proj.assets, Proj.common))
+	.then(()=>console.timeEnd.bind(console, label))
+	.catch(console.error);

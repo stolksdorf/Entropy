@@ -1,0 +1,17 @@
+{
+	"root":{
+		"name" : "temp",
+		"path" : "./client/temp/temp.jsx"
+	},
+	"assets": ["*.png","*.otf", "*.ico", "*.jpg"],
+	"common":["./client"],
+	"libs" : [
+		"react",
+		"react-dom",
+		"create-react-class",
+		"lodash",
+		"classnames",
+		"pico-router",
+		"pico-flux"
+	]
+}

@@ -4,6 +4,7 @@ logs
 
 #Ignore our built files
 build/*
+final/*
 
 # Ignore sensitive stuff
 config/local.json

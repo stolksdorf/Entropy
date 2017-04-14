@@ -3,8 +3,14 @@ const Electron = require('electron');
 const app = Electron.app;
 
 
+const renderPage = (req, res, next) => {
 
-require('electron-reload')(__dirname+'/public');
+};
+
+
+
+
+//require('electron-reload')(__dirname+'/public');
 
 const createWindow = ()=>{
 	win = new Electron.BrowserWindow({
@@ -12,9 +18,12 @@ const createWindow = ()=>{
 		height      : 500,
 	});
 
-	win.loadURL('file://' + __dirname + '/client/main.html');
 
 
+
+	win.loadURL('file://' + __dirname + '/build/yo.html');
+
+	win.webContents.openDevTools()
 
 	Electron.globalShortcut.register('CommandOrControl+.', () => {
 		console.log('CommandOrControl+X is pressed')
