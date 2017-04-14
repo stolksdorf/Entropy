@@ -2,31 +2,31 @@
   "name": "entropy",
   "version": "1.0.0",
   "description": "A hyper-opinionated music player built on electron",
-  "main": "build/electron.app.js",
+  "main": "app/entropy.app.js",
   "scripts": {
     "run": "node_modules/.bin/electron .",
     "start": "npm run run",
     "build": "node scripts/build.js",
     "dev": "node scripts/dev.js",
-    "electron": "node scripts/electron.js",
+    "electron": "node scripts/electron.build.js",
     "test": "nodemon app/lib.gen.js"
   },
   "author": "stolksdorf",
   "license": "MIT",
   "devDependencies": {
     "electron-connect": "^0.6.1",
-    "electron-packager": "^8.6.0"
-  },
-  "dependencies": {
-    "create-react-class": "^15.5.2",
-    "electron": "^1.6.2",
-    "fs-extra": "^2.1.2",
-    "lodash": "^4.17.4",
+    "electron-packager": "^8.6.0",
     "node-id3": "0.0.9",
     "pico-flux": "^2.1.2",
     "pico-router": "^1.1.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "vitreum": "^4.2.0"
+    "vitreum": "^4.2.0",
+    "fs-extra": "^2.1.2",
+    "create-react-class": "^15.5.2"
+  },
+  "dependencies": {
+    "electron": "^1.6.2",
+    "lodash": "^4.17.4"
   }
 }

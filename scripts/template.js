@@ -1,6 +1,8 @@
 module.exports = function(vitreum, config){
+	const props = {};
 
-	console.log(config);
+	let connectScript = `<script>require('electron-connect').client.create({ logLevel: 0})</script>`;
+	if(config.isProd) connectScript = '';
 
 	return `
 <!DOCTYPE html>
@@ -11,22 +13,22 @@ module.exports = function(vitreum, config){
 		<link rel="icon" href="/assets/homebrew/favicon.ico" type="image/x-icon" />
 
 		<title>Entropy</title>
-		<link rel="stylesheet" type="text/css" href="temp/bundle.css" />
+		<link rel="stylesheet" type="text/css" href="entropy/bundle.css" />
 	</head>
 	<body>
 		<main id="reactRoot">${vitreum.body}</main>
 	</body>
 	<script src="libs.js"></script>
-	<script src="temp/bundle.js"></script>
+	<script src="entropy/bundle.js"></script>
 	<script>
 		(function(){
 			var root = document.getElementById('reactRoot');
 			if(!root) throw "Vitreum: Could not find element with id 'reactRoot' to mount into";
-			var element = require('react').createElement(temp, {"env":"local"});
+			var element = require('react').createElement(entropy, ${JSON.stringify(props)});
 			require('react-dom').render(element, root);
 		})();
 	</script>
-	<script>require('electron-connect').client.create()</script>
+	${connectScript}
 </html>
 `;
 }

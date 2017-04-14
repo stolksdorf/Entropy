@@ -1,10 +1,10 @@
 {
 	"root":{
-		"name" : "temp",
-		"path" : "./client/temp/temp.jsx"
+		"name" : "entropy",
+		"path" : "./interface/entropy.jsx"
 	},
 	"assets": ["*.png","*.otf", "*.ico", "*.jpg"],
-	"common":["./client"],
+	"common":["./interface"],
 	"libs" : [
 		"react",
 		"react-dom",

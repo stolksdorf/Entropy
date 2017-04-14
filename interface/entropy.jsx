@@ -4,7 +4,7 @@ const Comp  = require('create-react-class');
 const _     = require('lodash');
 const cx    = require('classnames');
 
-const Temp = Comp({
+const Entropy = Comp({
 	getDefaultProps: function() {
 		return {
 
@@ -20,16 +20,16 @@ const Temp = Comp({
 			this.setState({
 				count : this.state.count + 1
 			})
-			console.log('running');
+			console.log('running!!!');
 		}, 1000)
 
 	},
 	render: function(){
-		return <div className='temp'>
-			Temp Component Ready. is cool
+		return <div className='entropy'>
+			Entropy Component Ready.
 			{this.state.count}
 		</div>
 	}
 });
 
-module.exports = Temp;
+module.exports = Entropy;
